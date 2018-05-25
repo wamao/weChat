@@ -1,0 +1,75 @@
+
+<view class="order_tab">
+  <view
+    wx:for="{{tabItem}}" 
+    wx:for-item="item" 
+    wx:for-index="index"  
+    wx:key="key" 
+    class="{{ActiveIndex==index?'active':''}}" 
+    bindtap='tab'
+    data-index="{{index}}">
+   <text >{{item}}</text> 
+  </view>
+</view>
+<view>
+ <swiper bindchange="swiperChange"  current="{{ActiveIndex}}"  class="swiper" indicator-dots="{{false}}" autoplay="{{false}}"  style='height:{{swiperHeight-40}}px;' duration="500">  
+     <swiper-item >  
+      
+      <Loading id="loading"/>
+       <view wx-if="{{orderList.length==0&&finish}}" class='no_data'><text>还木有任何订单呢</text></view>
+        <scroll-view wx-if="{{orderList.length!=0}}" >
+      
+         <view class="order_content" wx:for="{{orderList}}" wx:for-item="item" wx:key="key" >
+           <text>订单编号：{{item.orderNo}}</text>
+           <view class="goods_detail" bindtap='detail' data-item="{{item}}"  >
+                <image src='{{item.goodsImgUrl}}'></image>
+               <view>
+                 <text>{{item.goodsName}}</text>
+                 <text>尺码：{{item.goodsSize}}</text>
+               </view>
+               <text>待付款</text>
+           </view>
+           <view class='goods_price'>
+            <text>应付：￥{{item.goodsPrice}}</text>
+            <view class='btn_content'>
+              <text bindtap='cancel' data-orderId="{{item.orderId}}" class='cancel btn'>取消订单</text>
+              <text bindtap='pay' class='pay btn'>去付款</text>
+            </view> 
+           </view>
+         </view>
+        </scroll-view>   
+     </swiper-item> 
+
+     <swiper-item style="width:200px;" >  
+      <view wx-if="{{orderList.length==0}}" class='no_data'><text>还木有任何订单呢</text></view>
+        <scroll-view wx-if="{{orderList.length!=0}}" >
+         <view class="order_content" wx:for="{{orderList}}" wx:for-item="item" wx:key="key" >
+           <text>订单编号：{{item.orderNo}}</text>
+           <view class="goods_detail">
+               <image src='{{item.goodsImgUrl}}'></image>
+               <view>
+                 <text>{{item.goodsName}}</text>
+                 <text>尺码：{{item.goodsSize}}</text>
+               </view>
+               <text>待付款</text>
+           </view>
+           <view class='goods_price'>
+            <text>应付：￥{{item.goodsPrice}}</text>
+            <view class='btn_content'>
+               <text bindtap='cancel' data-orderId="{{item.orderId}}" class='cancel btn'>取消订单</text>
+              <text bindtap='pay' class='pay btn'>去付款</text>
+            </view> 
+           </view>
+         </view>
+        </scroll-view>   
+     </swiper-item> 
+
+
+    <swiper-item> <view class='no_data'><text>还木有任何订单呢</text></view></swiper-item> 
+    <swiper-item> <view class='no_data'><text>还木有任何订单呢</text></view></swiper-item>  
+    <swiper-item> <view class='no_data'><text>还木有任何订单呢</text></view></swiper-item>  
+   
+  </swiper>
+
+
+</view>

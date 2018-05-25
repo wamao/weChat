@@ -1,0 +1,56 @@
+
+<view class="coupon">
+ <text class="title">您享受的优惠总金额</text>
+ <view>
+   <view>
+      <text>优惠券 ￥100</text>
+      <text>已为您选择金额最大的优惠券</text>
+   </view>
+    <image src='../../assets/images/right.png'></image>
+ </view>
+</view>
+
+
+<view class="address" bindtap='addressList' >
+ <text class="title">您需要我们送到哪里?</text>
+ <view>
+   <view wx:if="{{address.AddressId}}" >
+      <text>{{address.ContactPerson}} {{address.ContactNumber}}</text>
+      <text> {{address.ContactAddress}} {{address.ContactDetailAddress}}</text>
+   </view>
+    <view wx:if="{{!address.AddressId}}"  >
+      <text>未添加收货地址</text>
+   </view>
+    <image src='../../assets/images/right.png'></image>
+ </view>
+
+</view>
+
+<view class='content'>
+<text class="title">您的商品清单</text>
+<block  wx:for="{{listArr}}" wx:for-item="item" wx:key="key" wx:for-index="index" wx-if="{{listArr.length!=0}}"  >
+ <view class='goodsContent'>
+      <view class='item'  style="{{item.ViewStyle}}" data-index="{{index}}">
+        <image  class='imgurl' src="{{item.goodsImgUrl}}"></image>
+        <view class='center' >
+          <text class='goodsName'>{{item.goodsName}}</text>
+          <text class='goodsStyle'> 尺码{{item.goodsSize}}</text>
+        </view>
+        <view class='goods_con'>
+            <text class='goods_price'>￥{{item.goodsPrice}}</text>
+            <text class='goods_num'>x{{item.goodsNumber}}</text>
+        </view>
+      </view>
+      <view class="mark">
+        <text>备注：</text>
+        <input value="{{item.remark}}"  bindinput="listenerInput" data-index="{{index}}"  placeholder='选填，60字以内'></input>
+      </view>
+ </view>
+</block>
+</view>
+
+<view class='bottom'>
+ <text>￥{{totalPrice}}</text>
+ <text bindtap='pay'>马上结算</text>
+</view>
+

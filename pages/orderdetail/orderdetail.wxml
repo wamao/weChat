@@ -1,0 +1,31 @@
+ 
+ <view class="order_no">
+   <text>单号：{{item.orderNo}}</text>
+   <image  bindtap='cancel' src='../../assets/images/close.png'></image>
+ </view>
+ <view class='address'>
+   <text>收货人：{{item.ContactPerson}}{{item.ContactNumber}}</text>
+    <text>收货人地址：{{item.ContactAddress}}{{item.ContactDetailAddress}}</text>
+ </view>
+ <view class='goodsContent'>
+      <view class='item'>
+        <image  class='imgurl' src="{{item.goodsImgUrl}}"></image>
+        <view class='center' >
+          <text class='goodsName'>{{item.goodsName}}</text>
+          <text class='goodsStyle'> 尺码{{item.goodsSize}}</text>
+        </view>
+        <view class='goods_con'>
+            <text class='goods_price'>￥{{item.goodsPrice}}</text>
+            <text class='goods_num'>x{{item.goodsNumber}}</text>
+        </view>
+      </view>
+ </view>
+<view class='order_detail'>
+  <text>运费：0(包邮)</text>
+  <text>合计：￥{{item.goodsPrice}}</text>
+  <text>下单时间：{{item.createTime}}</text>
+  <text wx-if="{{item.remark}}">备注信息：{{item.remark}}</text>
+</view>
+<view bindtap='pay' class='pay'>
+  <text >去付款</text>
+</view>

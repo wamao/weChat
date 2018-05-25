@@ -1,0 +1,44 @@
+
+<Loading id="loading"/>
+<view class='content' wx:if="{{finish}}">
+<scroll-view class="left_content" scroll-y="true" bindscrolltolower="searchScrollLower">
+  <view class="left_nav" >
+    <view 
+        wx:for="{{categoryList}}" 
+        wx:for-item="item" wx:key="key" 
+        class="nav_item {{activeIndex==index?'nav_item_active':''}}"  
+        bindtap="Tap_category"
+        data-index="{{index}}"
+      >
+    <text >{{item.title}}</text>
+     </view>
+  </view>
+</scroll-view> 
+<view  class="right_content"  style="width:{{windowWidth-70}}px;height:100%;">
+    <view class="category_list_content" style="top:{{-activeIndex*windowHeight}}px;">
+      <block  wx:for="{{categoryList}}" wx:for-item="item" wx:key="key">
+      <scroll-view scroll-y="true" style="height:{{windowHeight}}px;padding:0px;"  >
+        <image class="category_image" id="list-{{index}}"  src="/assets/images/imgCover4.jpg" />
+        <view class="category_item"  wx:for="{{item.children}}" wx:for-item="child" wx:key="key">
+          <text class="category_title">---{{child.title}}---</text>
+          <view class="category_child" touchstart="tocuh" > 
+              <view class="category_children"
+                  wx:for="{{child.children}}" 
+                  wx:for-item="children" 
+                  wx:key="key" data-info="{{children}}"  
+                   bindtap="To_category"
+               >
+                <image  src="https://raw.githubusercontent.com/wamao/img/master/img/nvzhuang/weiyi.jpg" />
+                <text>{{children.title}}</text>
+               </view>
+           </view>
+        </view>
+      </scroll-view>
+      </block> 
+    </view>
+</view> 
+</view>
+
+
+
+

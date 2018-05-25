@@ -1,0 +1,199 @@
+page{
+  padding:0px 15px;
+  box-sizing: border-box;
+}
+.goodsContent{
+  margin-bottom:8px;
+  width:100%;
+  background: #ffffff;
+  box-sizing: border-box;
+  
+  
+}
+
+.mark{
+  display: flex;
+  align-items: center;
+  
+
+  
+  padding:2px 10px;
+
+}
+.mark text{
+  display: block;
+ width: 100%;
+  font-size: 12px;
+  color:#000000;
+}
+
+.item{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height:80px;
+  background: #ffffff;
+  border-bottom:1px solid #f5f5f5;
+
+}
+.center{
+  flex:1;
+}
+.imgurl{
+  width:60px;
+  height:60px;
+  margin-right: 10px;
+}
+
+.slect{
+  display:block;
+  width:24px;
+  height:24px;
+  border-radius: 12px;
+  border:1px solid #ccc;
+}
+
+.goodsName{
+  font-size: 12px;
+  display: block;
+  color:#333333;
+}
+.price{
+  width:100px;
+  color:#d81e06;
+
+  text-align: center;
+}
+
+.numbercontent{
+  display: flex;
+  flex-direction: row;
+  width:100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top:5px;
+  
+}
+
+.num{
+  border-right:1px solid #ccc;
+  border-left:1px solid #ccc;
+
+}
+.min,.add,.num{
+  text-align: center;
+  flex:1;
+ 
+}
+
+
+
+.active{
+  display:block;
+  width:24px;
+  height:24px;
+  border-radius: 12px;
+  
+}
+
+
+
+
+.goods_price{
+  font-size:12px;
+  color:#000000;
+  
+}
+
+.goods_num{
+  font-size:13px;
+  color:#000000;
+   margin-top:5px;
+  
+}
+
+.goodsStyle{
+  font-size:12px;
+  color:#666666
+  ;
+ 
+}
+
+.goods_con{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding:10px;
+  box-sizing: border-box;
+ 
+}
+
+.order_detail text{
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color:#333333;
+  line-height: 20px;
+}
+
+
+
+.order_price view{
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color:#333333;
+}
+
+
+
+.order_no{
+  font-size: 15px;
+  color:#000000;
+  padding:10px 0px;
+  border-bottom:1px solid #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address{
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color:#333333;
+  padding:8px 0px;
+  border-bottom:1px solid #f5f5f5;
+}
+
+.address >text:first-child{
+  margin-bottom: 5px;
+}
+
+.pay{
+  width:100%;
+  height: 35px;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:20px auto;
+  
+}
+
+.pay text{
+  font-size: 13px;
+  color:#ffffff;
+  letter-spacing: 2px;
+}
+
+
+.order_no image{
+  width:16px;
+  height:16px;
+}
+

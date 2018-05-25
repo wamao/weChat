@@ -1,0 +1,53 @@
+<view class="search">
+  <view>
+    <image src='/assets/images/search.png'></image>
+    <input bindconfirm="confirm" confirm-type="search" bindinput='input'   placeholder='搜索想要商品' type='search' value="{{keyword}}"  ></input>
+     <image src='/assets/images/clear.png' bindtap='clear'></image>
+  </view>
+  <text bindtap='cancel'>取消</text>
+</view>
+<view class='loading' wx:if='{{!finish}}' style="height:200px;" >
+   <image src='../../assets/images/loading.png'></image>
+   <text>努力加载中....</text>
+</view>
+
+<view class='no_data'  wx:if='{{finish&&goodslist.length==0&&isSearch}}' >
+  <text> 草在结它的种子，</text>
+  <text>风在摇它的叶子。</text>
+  <text>  我们站着，不说话，就十分美好。</text>
+</view>
+<block wx:if="{{history.length!=0&&(!isSearch)}}">
+   <view class='history_serach' >
+   <view class='history_title'>
+     <text>历史搜索</text>
+      <image bindtap='del' src='../../assets/images/del.png'></image>
+   </view>
+   <view class='history_word'>
+    <text  wx:for="{{history}}" wx:for-item="item" wx:key="key"  bindtap='keywordSearch' data-keyword="{{item}}" >{{item}}</text>
+   </view>
+</view>
+</block>
+
+<scroll-view scroll-top="{{scrollTop}}"  wx:if="{{goodslist.length!=0}}"  bindscrolltolower="bindDownLoad"  scroll-y="true" style="height:{{windowHeight-40}}px;"   >
+<view class='Catrgory_list_content'>
+<block  wx:for="{{goodslist}}" wx:for-item="item" wx:key="key">
+  <view class='goodsContainer'bindtap="goodsDetail" data-goodsId="{{item.goodsId}}" >
+     <image class='goodsImgstyle'  src="{{item.goodsImgUrl}}" ></image>
+     <text class='goodsName'>{{item.goodsName}}</text>
+     <view class='bottomstyle'>
+         <text class='goodsPrice' >￥{{item.goodsPrice}}</text>
+     </view>
+  </view>
+</block> 
+</view>
+<view class='loading'>
+   <image src='../../assets/images/loading.png'></image>
+   <text>努力加载中....</text>
+</view>
+</scroll-view>
+
+<Toast
+  id='toast' 
+  position="120"
+  >
+</Toast>

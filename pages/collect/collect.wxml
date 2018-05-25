@@ -1,0 +1,40 @@
+
+
+ <Loading id="loading"/>
+<view class='content'>
+<block  wx:for="{{listArr}}" wx:for-item="item" wx:key="key" wx:for-index="index" wx-if="{{listArr.length!=0}}"  >
+ <view class='goodsContent'>
+       <view class='item' 
+          style="{{item.ViewStyle}}"
+          data-index="{{index}}"
+           data-goodsId="{{item.goodsId}}"
+          bindtouchstart="touchStart" 
+          bindtouchmove="touchMove" 
+          bindtouchend="touchEnd"
+          bindtap='detail'
+        >
+           <image  class='imgurl' src="{{item.goodsImgUrl}}"></image>
+           <text class='goodsName'>{{item.goodsName}}</text>
+          <view class='goods_del' data-index="{{index}}" data-goodsId="{{item.goodsId}}" catchtap="delGoods" >
+            <text>取消收藏</text>
+          </view>
+      </view>
+ </view>
+
+
+</block>
+</view>
+ <view class="no_data" wx-if="{{listArr.length==0&&finish}}">
+ <text>" 你知道，美好的事物都是慢慢开始的。</text>
+  <text>不可能一开始，就是蓝。"</text>
+  
+ </view>
+
+
+ <Toast
+  id='toast' 
+  position="120"
+  >
+</Toast>
+
+

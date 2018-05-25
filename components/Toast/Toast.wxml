@@ -1,0 +1,5 @@
+<view class='wx_toast_container' hidden="{{show}}"  style="bottom:{{position}}px">
+  <text>{{message}}</text>
+</view>
+
+

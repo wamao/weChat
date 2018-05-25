@@ -1,0 +1,100 @@
+
+<swiper class='swiper' indicator-dots="true" style='height:240px' autoplay="true" interval="5000" duration="1000">  
+  <block  wx:for="{{goodsDetail.goodsImgArr}}" wx:for-item="item" wx:key="key" >
+    <swiper-item>  
+     <image src="{{item}}" class="slide_img" bindload="imageLoad"  mode="aspectFill"/>  
+    </swiper-item> 
+  </block > 
+</swiper>
+<view class="goods_detail">
+<text >{{goodsDetail.goodsName}}</text>
+ <view class="goods_select">
+    <text>￥{{goodsDetail.goodsPrice}}</text>
+     <view bindtap='collect' wx-if="{{hasCollect}}">
+      <image src="../../assets/images/select_f.png"></image>
+       <text>取消收藏</text>
+     </view>
+      <view bindtap='collect' wx-if="{{!hasCollect}}">
+      <image src="../../assets/images/select_n.png"></image>
+       <text>收藏</text>
+     </view>
+ </view> 
+</view>
+<view class="youhuiquan">
+  <text>您有一张满149减10元的优惠券可用</text>
+</view>
+<view class='zongzhi'>
+  <text>7天无理由退货</text>
+  <text>24小时发货</text>
+  <text>担保交易</text>
+</view>
+<view class="bottom">
+  <view>
+    <image src="../../assets/images/lianxi.png"></image>
+    <text>联系卖家</text>
+  </view>
+   <view class="bottom_cart">
+    <image src="../../assets/images/cart_n.png"></image>
+    <text>购物车</text>
+  </view>
+  <text class="add" bindtap="buy">立即购买</text>
+  <text class="buy " bindtap="addCart" >加入购物车</text>
+</view>
+
+<!--屏幕背景变暗的背景  -->
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" class="showSelect" wx:if="{{showModalStatus}}">
+   <view class='close_select'>
+      <image bindtap="closeModal" src="../../assets/images/close.png"></image>
+   </view>
+   <view class="goods_select_detail">
+     <image src="{{goodsDetail.goodsImgArr[0]}}"></image>
+     <view>
+        <text class="select_name" >{{goodsDetail.goodsName}}</text>
+        <text class="select_money">￥{{goodsDetail.goodsPrice}}</text>
+        <text class="select_size">亲选择规格属性</text>
+     </view>
+   </view> 
+   <view class='color_select'>
+       <text class="title" >款式</text>
+       <view>
+           <block  wx:for="{{goodsDetail.goodsImgArr}}" wx:for-item="item" wx:for-index="index" wx:key="key" >
+              <view bindtap='selectStyle' data-index="{{index}}"  class="{{index == StyleIndex ? 'StyleActive':''}}" >
+                 <image src="{{item}}"/>  
+              </view> 
+           </block > 
+       </view>
+   </view> 
+   
+     <view class='size_select'>
+     <text class="title">尺码</text>
+      <view>
+          <block  wx:for="{{goodsDetail.goodsSize}}" wx:for-item="item"  wx:for-index="index"  wx:key="key" >
+              <view bindtap='selectSize' data-item="{{item}}"   data-index="{{index}}" class="{{index == SizeIndex ? 'SizeActive':''}}" >
+                <text>{{item}}</text>
+              </view> 
+           </block > 
+      </view>
+   </view>
+
+   <view class='num_select'>
+     <text class="title"> 数量</text>
+      <view>
+       <text bindtap='min'>-</text>
+         <input value="{{  goodsNumber}}" />
+       <text bindtap='add'>+</text>
+      </view>
+   </view>
+  </view>
+
+  <view wx:if="{{showToast}}" class="toast_l">
+  <text>{{showMsg}}</text>
+  </view>
+
+  
+<Toast
+  id='toast' 
+  position="120"
+  >
+</Toast>

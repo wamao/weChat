@@ -1,0 +1,20 @@
+page{
+  background:#f5f5f5;
+}
+
+.swiper-tab{  
+  background:#fff;
+  width: 100%; 
+  text-align: center;  
+  line-height: 80rpx; 
+  }  
+.swiper-tab-list{ font-size: 30rpx;  
+  display: inline-block;  
+  width: 25%;  
+  color: #666;  
+}  
+.on{ color: #d81e06;  
+  border-bottom: 5rpx solid #d81e06;
+  }  
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }  
+  

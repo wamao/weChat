@@ -1,0 +1,8 @@
+
+{
+  "usingComponents": {
+    "Toast": "/components/Toast/Toast",
+    "Loading": "/components/Loading/loading"
+  },
+  "navigationBarTitleText": "我的地址"
+}

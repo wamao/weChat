@@ -1,0 +1,92 @@
+/* pages/coupon/coupon.wxss */
+page{
+  padding:0px 15px;
+  box-sizing: border-box;
+
+}
+
+.coupon{
+  display: flex;
+   border:1rpx solid #dadada;
+   padding:0px 15px;
+   border-radius: 5px;
+   margin-top:10px;
+  
+}
+
+.type{
+ 
+  display: block;
+  width: 15px;
+  height:50px;
+  padding:8px 5px;
+  background: #dadada;
+  color:#333333;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 0px 0px 12px 12px;
+  margin-right:10px;
+
+}
+
+.coupon > view{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding:10px 0px;
+ 
+}
+
+.coupon view view  text:nth-child(1){
+  font-size: 24px;
+  color:#d81e06;
+  font-weight: 600;
+}
+
+.coupon view view  text:nth-child(2){
+  font-size: 12px;
+  color:#333333;
+  margin-left:8px;
+  
+}
+
+.coupon view view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+
+  
+}
+
+ .text1{
+   font-size: 13px;
+   color:#000000;
+   padding:5px 0px;
+  
+}
+
+.text2{
+  width: 100%;
+  display: block;
+  border-top:1px dashed #dadada;
+   font-size: 14px;
+   color:#666666;
+   font-weight: 600;
+   padding:5px 0px;
+  
+}
+
+.receive{
+display: block;
+border:1px solid #333333;
+line-height: 20px;
+width:60px;
+text-align: center;
+font-size: 12px;
+border-radius: 5px;
+letter-spacing: 2px;
+ 
+}
+

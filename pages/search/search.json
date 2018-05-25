@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Loading": "/components/Loading/loading",
+    "Toast": "/components/Toast/Toast"
+  },
+  "navigationBarTitleText": "搜索"
+}

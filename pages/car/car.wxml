@@ -1,0 +1,47 @@
+
+
+<view class='content'>
+<block  wx:for="{{listArr}}" wx:for-item="item" wx:key="key" wx:for-index="index" wx-if="{{listArr.length!=0}}"  >
+ <view class='goodsContent'>
+      <view class='item'  style="{{item.ViewStyle}}" data-index="{{index}}" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+        <icon wx:if="{{item.isChecked}}" type="success" size="18" color='black' bindtap="singleSelect" data-index="{{index}}" class="my-check"/>
+        <icon wx:else type="circle" size="18" bindtap="singleSelect" data-index="{{index}}" class="my-check"/>
+        <image  class='imgurl' src="{{item.goodsImgUrl}}"></image>
+        <view class='center' >
+          <text class='goodsName'>{{item.goodsName}}</text>
+          <text class='goodsStyle'>{{item.goodsColor  }} {{item.goodsSize}}</text>
+        </view>
+        <view class='goods_con'>
+            <text class='goods_price'>￥{{item.goodsPrice}}</text>
+            <text class='goods_num'>x{{item.goodsNumber}}</text>
+        </view>
+        <view class='goods_del' data-index="{{index}}" data-goodsId="{{item.goodsId}}" catchtap="delGoods" >
+          <text>删除</text>
+        </view>
+      </view>
+ </view>
+
+
+</block>
+</view>
+ <view class="no_data" wx-if="{{listArr.length==0}}"  >
+  <text>购物车就像生活一样</text>
+  <text>爱生活,就不要空空荡荡</text>
+ </view>
+ <view class='bottom' wx-if="{{listArr.length!=0}}">
+    <view class='totalSelect'>
+        <icon wx:if="{{selectAllStatus}}" type="success" size="18" color='black' bindtap="selectAll" data-index="{  {index}}" class="my-check"/>
+        <icon wx:else type="circle" size="18" bindtap="selectAll" data-index="{{index}}" class="my-check"/>
+        <text>全选</text>
+    </view>
+    <text class='totalPrice'>￥{{totalPrice}}</text>
+    <text class='pay' bindtap='pay' >结算</text>
+ </view>
+
+ <Toast
+  id='toast' 
+  position="120"
+  >
+</Toast>
+
+

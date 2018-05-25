@@ -1,0 +1,173 @@
+/* pages/search/search.wxss */
+
+page{
+  width:100%;
+  height:100%;
+  background: #f5f5f5;
+}
+.search{
+  width:100%;
+  padding:0px 15px;
+  box-sizing: border-box;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  background: #ffffff;
+  padding-bottom:5px;
+  
+}
+
+.search>text{
+  display: block;
+  width:60px;
+  text-align: center;
+  font-size: 12px;
+  color:#000000;
+}
+
+.search view{
+  flex: 1;
+  display: flex;
+  height: 35px;
+  align-items: center;
+  background:#f5f5f5;
+  border-radius: 20px;
+  padding:0px 10px;
+
+}
+
+.search view input{
+  font-size: 12px;
+  flex: 1;
+  padding:0px 15px;
+ 
+}
+
+.search view image{
+  width:20px;
+  height:20px;
+}
+
+
+
+
+.Catrgory_list_content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.goodsContainer{
+  width:48%;
+  background: #fff;
+  box-sizing: border-box;
+  
+  padding:6px 6px;
+  margin-bottom:5px;
+  border-radius: 2px;
+  flex-direction: column;
+}
+.goodsImgstyle{
+  width:100%;
+  height:150px;
+}
+.goodsName{
+  font-size: 12px;
+}
+.carImgstyle{
+  width:28px;
+  height:28px;
+  
+}
+.goodsPrice{
+  color:#000000;
+}
+.bottomstyle{
+  width:100%;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px ;
+  box-sizing: border-box;
+}
+
+/* components/loading.wxss */
+
+.loading{
+  width: 100%;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading image{
+  width:32px;
+  height: 32px;
+  margin-right:5px;
+  animation: rotate 1s linear infinite;
+}
+
+
+@keyframes rotate{
+  from{transform: rotate(0deg)}
+  to{transform: rotate(360deg)}
+}
+
+.loading text{
+  font-size: 12px;
+  color: #333333;
+}
+
+.no_data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height:300px;
+}
+
+.no_data text{
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.history_serach{
+ padding: 15px;
+ width:100%;
+ box-sizing: border-box;  
+}
+
+.history_title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history_title image{
+  width:18px;
+  height:18px;
+}
+
+.history_title text{
+  font-size: 12px;
+}
+
+.history_word{
+  padding:10px 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.history_word text{
+   background: #ffffff;
+   width: auto;
+   margin-right: 10px;
+   font-size: 12px;
+   color:#000000;
+   padding: 6px 20px;
+   border-radius: 18px;
+   letter-spacing: 2px;
+}

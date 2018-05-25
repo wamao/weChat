@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Toast": "/components/Toast/Toast"
+  },
+  "navigationBarTitleText": "商品详情"
+}

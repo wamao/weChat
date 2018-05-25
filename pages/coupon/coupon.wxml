@@ -1,0 +1,25 @@
+<view class="coupon" wx:for="{{couponList}}" wx:for-item="item" wx:key="key"  wx:if="{{couponList.length!=0}}" >
+ <text class='type'>满减券</text>
+  <view>
+      <view>
+           <view><text>￥{{item.disCount}}</text> <text>{{item.title}}</text></view>
+           
+      </view>
+      <text class='text1'>满{{item.spendMoney}}可用</text>
+      <text class='text2'>有效期至：{{item.endTime}}</text>
+  </view>
+  
+</view>
+
+<Loading id="loading"/>
+<view class='no_data'  wx:if="{{couponList.length==0&&finish}}"  >
+  <text> " 春天责备没有灵魂的人</text>
+  <text> 责备我不开花</text>
+  <text> 不繁茂，即将速朽，没有灵魂 "</text>
+   <text> ——周云鹏</text>
+   <text>快去领券中心领卷吧</text>
+</view>
+
+
+
+

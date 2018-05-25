@@ -1,0 +1,20 @@
+/* components/Toast/Toast.wxss */
+
+.wx_toast_container{
+  position: fixed;
+  width:200px;
+  height:30px;
+  background:rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+
+}
+
+.wx_toast_container text{
+  color:#ffffff;
+  font-size: 12px;
+}

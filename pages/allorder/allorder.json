@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+   "Loading": "/components/Loading/loading"
+  },
+  "navigationBarTitleText": "我的订单"
+}

@@ -1,0 +1,27 @@
+<!--logs.wxml-->
+ <Loading id="loading"/>
+<view class="addresslist"  wx-if="{{addressList.length!=0}}"  >
+  <block wx:for="{{addressList}}" wx:key="key" wx:for-item="item" wx:for-index="index" >
+    <view class="address_item" bindtap='edit'  data-item="{{item}}"  >
+      <view class="address_item_left">
+       <text>{{item.ContactPerson}} {{item.ContactNumber}}</text>
+         <text>{{item.ContactAddress}}{{item.ContactDetailAddress}}</text>
+      </view>
+      <view class="address_item_right" wx:if="{{type!=1}}"  >
+        <image src='../../assets/images/edit.png'></image>
+         <text>编辑</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view  class='no_data'  wx-if="{{addressList.length==0&&finish}}">
+  <text>寻寻觅觅，寻不到你的踪迹...</text>
+</view>
+
+<view class="add_btn" bindtap='add_address' wx:if="{{type!=1}}">
+ <text>添加新收货地址</text>
+</view>
+
+
+
