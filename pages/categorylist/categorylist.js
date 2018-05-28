@@ -76,7 +76,7 @@ Page({
   bindDownLoad(){
     page++;
    this.getlist();
-   console.log('2222222')
+   
   }
 
 

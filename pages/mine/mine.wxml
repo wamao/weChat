@@ -1,15 +1,16 @@
 <!--index.wxml-->
 <view class='content'>
+
+
   <view class='userInfo'>
-   <image src="/assets/images/set.png" ></image>
-     <view class="username">
-        <text>用户名：ASGSBGX</text>
-        <view class='set'>
-           <image src="/assets/images/set.png" ></image>
-           <text>账户设置</text>
-        </view>
-     </view>
+    <image src="/assets/images/bg2.png" ></image>
+    <view>
+       <image src="/assets/images/bg2.png" ></image>
+       <text>谢春花</text>
+    </view>
   </view>
+
+
   <view class='itemcontent'>
      <view class='item' data-current="0"  bindtap="order">
         <view class='item_left'>
@@ -61,12 +62,3 @@
     </view>
 </view>
 
-<view class='itemcontent'>
-     <view class='item' data-current="0"  bindtap="couponlist"  >
-        <view class='item_left'>
-            <image src="/assets/images/youhuiquan.png" ></image>
-            <text>系统优惠券</text>
-        </view>
-        <image class='item_right' src="/assets/images/right.png" ></image>
-     </view>
-  </view>

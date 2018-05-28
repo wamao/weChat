@@ -17,6 +17,7 @@ Page({
     goodsDetail:{} // 商品详情
   },
   onLoad: function (options) {
+    console.log(options.goodsId)
     this.setData({
       goodsId: options.goodsId,
     });
@@ -26,7 +27,7 @@ Page({
     this.getDetail(); // 获取商品详情
     let token = wx.getStorageSync('token');
     if (token) {
-      this.isCollect();// 是否已经收藏
+     // this.isCollect();// 是否已经收藏
     }
    
   },
@@ -209,6 +210,16 @@ Page({
         this.Toast.showToast(data.message);
       }
     });
+  },
+
+  addDiscount(){
+    Http.Post('/addDiscount', { goodsId: this.data.goodsDetail.goodsId, discount:'0.75' }, (data) => {
+      console.log(data);
+      if (data.status == 0) {
+        this.Toast.showToast('添加成功');
+      }
+     
+    }); 
   }
 
 

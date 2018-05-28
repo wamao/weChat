@@ -62,12 +62,7 @@ Page({
     wx.navigateTo({
       url: '../coupon/coupon'
     });
-  },
-
-  // 优惠券页面
-  couponlist() {
-    wx.navigateTo({
-      url: '../couponlist/couponlist'
-    });
   }
+
+ 
 })

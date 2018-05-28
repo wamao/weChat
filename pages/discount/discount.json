@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Loading": "/components/Loading/loading"
+  },
+  "navigationBarTitleText": "今日折扣"
+}

@@ -1,0 +1,22 @@
+
+<Loading id="loading"/>
+<scroll-view>
+ <view  bindtap='detail'  data-goodsid="{{item.goodsid}}" class='item'  wx:for="{{list}}" wx:for-item="item" wx:key="key" >
+   <view class='item_left'>
+      <image src="{{item.goodsImgUrl}}" />
+      <view><text>{{item.discount}}折</text></view>
+   </view>
+   <view class='item_right'>
+     <text>断码清仓</text>
+     <text>{{item.goodsName}}</text>
+     <view>
+        <text>￥{{item.discountPrice}}</text>
+        <text>￥{{item.goodsPrice}}</text>
+     </view>
+   </view>
+ 
+ </view>
+
+
+
+</scroll-view>

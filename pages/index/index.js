@@ -5,6 +5,7 @@ var page=1;   // 请求页数
 var Http=require('../../service/service.js');
 Page({ 
   data: {
+    recommendList:[], // 推荐数据
     motto: 'Hello World',
     userInfo: {},
     listArr:[],
@@ -23,6 +24,7 @@ Page({
 // 页面加载时
   onLoad: function () {
     this.getlist(this);
+    this.getRecommend();
     // 获取设备信息
     wx.getSystemInfo({
       success: (res) => {
@@ -36,7 +38,14 @@ Page({
 
   },
 
-
+// 获取推荐
+  getRecommend(){
+    Http.Post('/getRecommend', {}, (data)=>{
+       if(data.status==0){
+         this.setData({recommendList:data.result.recommendList.data});
+       }
+    });
+  },
 
 
 
@@ -50,7 +59,7 @@ Page({
 
   // 请求成功
   sucFunc: function (data) {
-    console.log(data);
+   
     if (data.status == 0) {
       let newArr = data.result.chosenList;
       newArr.forEach(function (item) {
@@ -86,11 +95,27 @@ Page({
   },
    
   
-
+  // 商品搜索
   search(){
     wx.navigateTo({
       url: '../search/search',
-    })
+    });
+  },
+  
+  // 领券中心
+  draw(){
+    wx.navigateTo({
+      url: '../couponlist/couponlist',
+    });
+  },
+  
+  // 今日折扣
+  discount(){
+    wx.navigateTo({
+      url: '../discount/discount',
+    });
   }
+
+
  
 })

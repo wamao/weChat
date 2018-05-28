@@ -16,7 +16,8 @@
     "pages/collect/collect",
     "pages/coupon/coupon",
     "pages/couponlist/couponlist",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/discount/discount"
   ],
   "window": {
     "backgroundTextStyle": "light",

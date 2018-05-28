@@ -12,17 +12,17 @@
  </view>
  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">  
     <swiper-item>  
-     <image src="/assets/images/imgCover3.jpg" class="slide-image" mode="aspectFill"/>  
+     <image src="/assets/images/imgCover15.png" class="slide-image" mode="aspectFill"/>  
     </swiper-item> 
     
      <swiper-item>  
-     <image src="/assets/images/imgCover13.png" class="slide-image" mode="aspectFill"/>  
+     <image src="/assets/images/imgCover15.png" class="slide-image" mode="aspectFill"/>  
     </swiper-item> 
      <swiper-item>  
      <image src="/assets/images/imgCover15.png" class="slide-image" mode="aspectFill"/>  
     </swiper-item>
       <swiper-item>  
-     <image src="/assets/images/imgCover17.png" class="slide-image" mode="aspectFill"/>  
+     <image src="/assets/images/imgCover15.png" class="slide-image" mode="aspectFill"/>  
     </swiper-item>
   </swiper>
 
@@ -33,59 +33,52 @@
    <view><image src="/assets/images/index_s.png" /><text>48小时快速退款</text></view>
 </view>
 
+<view class='favourable'>
+  <view class='favourable_left' bindtap='draw'>
+   <text>- 领券中心 -</text>
+   <view>
+     <image src="/assets/images/juan.jpg" />
+     <view>
+        <text>每满99立减10元</text>
+        <text >马上去领取></text>
+     </view> 
+   </view>
+ </view>
 
-<view class='ad'>
+ <view class='favourable_right' bindtap='discount'>
+   <text>- 今日折扣 -</text>
+     <image src="/assets/images/zhekou.jpg" />
+     <view>
+        <text class=''>6.5</text>
+        <text>折起</text>
+     </view>
+ </view>
+</view>
+
+
+<view class='recommendList'>
+
+
+<view class='ad'    wx:for="{{recommendList}}" wx:for-item="item" wx:key="key"  >
 <view class='ad_content'>
-  <swiper class="swiper"> <swiper-item><image src="/assets/images/imgCover13.png" class="slide-image" mode="aspectFill"/></swiper-item></swiper>
-  <view class="ad_detail"> <text>有温度的慢时光</text> <text>恰到好处的家居</text><text>查看全部</text></view>
+  <swiper class="swiper"> <swiper-item><image src="/assets/images/imgCover15.png" class="slide-image" mode="aspectFill"/></swiper-item></swiper>
+  <view class="ad_detail"> <text>{{item.description}}</text> <text>{{item.title}}</text><text>查看全部</text></view>
   <view class='point'></view>
 </view>
 
 <scroll-view scroll-x="true" style="white-space: nowrap;">
   <view class='ad_goodslit'>
-    <view class='ad_goodsitem'   wx:for="{{listArr}}" wx:for-item="item" wx:key="key">
-       <image  src="{{item.goodsImgUrl}}" ></image>
-       <text >{{"sdad"}}</text>
-       <text>￥{{item.goodsPrice}}</text>
+    <view class='ad_goodsitem'   wx:for="{{item.data}}" wx:for-item="items" wx:key="key">
+       <image  src="{{items.goodsImgUrl}}" ></image>
+       <text >{{items.goodsName}}</text>
+       <text>￥{{items.goodsPrice}}</text>
      </view>
   </view>
 </scroll-view>
 </view>
 
-<view class='ad'>
-<view class='ad_content'>
-  <swiper class="swiper"> <swiper-item><image src="/assets/images/imgCover13.png" class="slide-image" mode="aspectFill"/></swiper-item></swiper>
-  <view class="ad_detail"> <text>有温度的慢时光</text> <text>恰到好处的家居</text><text>查看全部</text></view>
-  <view class='point'></view>
-</view>
 
-<scroll-view scroll-x="true" style="white-space: nowrap;">
-  <view class='ad_goodslit'>
-    <view class='ad_goodsitem'   wx:for="{{listArr}}" wx:for-item="item" wx:key="key">
-       <image  src="{{item.goodsImgUrl}}" ></image>
-       <text >{{"sdad"}}</text>
-       <text>￥{{item.goodsPrice}}</text>
-     </view>
-  </view>
-</scroll-view>
-</view>
 
-<view class='ad'>
-<view class='ad_content'>
-  <swiper class="swiper"> <swiper-item><image src="/assets/images/imgCover13.png" class="slide-image" mode="aspectFill"/></swiper-item></swiper>
-  <view class="ad_detail"> <text>有温度的慢时光</text> <text>恰到好处的家居</text><text>查看全部</text></view>
-  <view class='point'></view>
-</view>
-
-<scroll-view scroll-x="true" style="white-space: nowrap;">
-  <view class='ad_goodslit'>
-    <view class='ad_goodsitem'   wx:for="{{listArr}}" wx:for-item="item" wx:key="key">
-       <image  src="{{item.goodsImgUrl}}" ></image>
-       <text >{{"sdad"}}</text>
-       <text>￥{{item.goodsPrice}}</text>
-     </view>
-  </view>
-</scroll-view>
 </view>
 
 <view class='line'><text>猜你喜欢</text></view>

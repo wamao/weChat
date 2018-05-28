@@ -33,7 +33,7 @@
     <image src="../../assets/images/lianxi.png"></image>
     <text>联系卖家</text>
   </view>
-   <view class="bottom_cart">
+   <view class="bottom_cart" bindtap='addDiscount'>
     <image src="../../assets/images/cart_n.png"></image>
     <text>购物车</text>
   </view>
